@@ -45,6 +45,8 @@ class ViewController: UIViewController {
         if let firstAsset = allAssets?.firstObject as? PHAsset {
             let options = PHImageRequestOptions()
             
+            // we're looking to get the largest image already on device
+            // so disable network access for larger images
             options.networkAccessAllowed = false
             options.deliveryMode = .Opportunistic
             options.synchronous = false
